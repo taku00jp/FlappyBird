@@ -48,6 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
         setupCloud()
         setupWall()
         setupBird()
+        setupScoreLabel()
         setupcoin()
     }
 
@@ -90,12 +91,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if scrollNode.speed > 0 {
         // 鳥の速度をゼロにする
         bird.physicsBody?.velocity = CGVector.zero
         
         // 鳥に縦方向の力を与える
         bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 15))
+    } else if bird.speed == 0 {
+    restart()
+    
     }
+}
 
     func setupGround() {
         // 地面の画像を読み込む
@@ -209,7 +215,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
             let under_wall_y = CGFloat(under_wall_lowest_y + random_y)
             
             // キャラが通り抜ける隙間の長さ
-            let slit_length = self.frame.size.height / 10
+            let slit_length = self.frame.size.height / 5
             
       
             let under = SKSpriteNode(texture: wallTexture)
