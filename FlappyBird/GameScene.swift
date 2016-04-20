@@ -7,12 +7,15 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate  {
     
     var scrollNode:SKNode!
     var wallNode:SKNode!
     var bird:SKSpriteNode!
+    
+    var audioPlayer = AVAudioPlayer()
     
     // 衝突判定カテゴリー
     let birdCategory: UInt32 = 1 << 0
@@ -49,7 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
         setupWall()
         setupBird()
         setupScoreLabel()
-        setupcoin()
+        createScoreNode()
     }
 
     // SKPhysicsContactDelegateのメソッド。衝突したときに呼ばれる
@@ -296,10 +299,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
         addChild(bird)
     }
     
-    func setupcoin() {
-        // コインの画像を読み込む
-        let coinTexture  = SKTexture(imageNamed: "coin")
-        coinTexture.filteringMode = SKTextureFilteringMode.Linear
+    func createScoreNode() {
+        let scoreNode = SKSpriteNode(imageNamed: "Coin")
+        scoreNode.size = CGSize(width: 50, height: 50)
+        
+        scoreNode.position = CGPoint(x: self.frame.width + 25, y: self.frame.height / 2)
+        scoreNode.physicsBody = SKPhysicsBody(rectangleOfSize: scoreNode.size)
+        scoreNode.physicsBody?.affectedByGravity = false
+        scoreNode.physicsBody?.dynamic = false
+    
+        scoreNode.physicsBody?.collisionBitMask = 0
+       
+        scoreNode.color = SKColor.blueColor()
+        
+        
+        var yourSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(Points.wav))
+        
+        println(yourSound)
+        
+        var error: NSError?
+        
+        audioPlayer = AVAudioPlayer(contentsOfURL:yourSound, error: &error)
+        
+        audioPlayer.prepareToPlay()
+        
+        audioPlayer.play()
+
+
+        
         
 
     }
@@ -339,5 +366,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
         bestScoreLabelNode.text = "Best Score:\(bestScore)"
         self.addChild(bestScoreLabelNode)
     }
+    
+    
     
 }

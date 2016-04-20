@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		735ECC231CC7DD1E0013F1ED /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735ECC221CC7DD1E0013F1ED /* AVFoundation.framework */; };
+		735ECC251CC7DF5C0013F1ED /* Points.wav in Resources */ = {isa = PBXBuildFile; fileRef = 735ECC241CC7DF5C0013F1ED /* Points.wav */; };
 		7366C7C61CC3369E003B728D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366C7C51CC3369E003B728D /* AppDelegate.swift */; };
 		7366C7C81CC3369E003B728D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366C7C71CC3369E003B728D /* ViewController.swift */; };
 		7366C7CB1CC3369E003B728D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7366C7C91CC3369E003B728D /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		735ECC221CC7DD1E0013F1ED /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		735ECC241CC7DF5C0013F1ED /* Points.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Points.wav; path = ../../Points.wav; sourceTree = "<group>"; };
 		7366C7C21CC3369E003B728D /* FlappyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7366C7C51CC3369E003B728D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7366C7C71CC3369E003B728D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735ECC231CC7DD1E0013F1ED /* AVFoundation.framework in Frameworks */,
 				7366C7D81CC33703003B728D /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +48,7 @@
 		7366C7B91CC3369E003B728D = {
 			isa = PBXGroup;
 			children = (
+				735ECC221CC7DD1E0013F1ED /* AVFoundation.framework */,
 				7366C7D71CC33703003B728D /* SpriteKit.framework */,
 				7366C7C41CC3369E003B728D /* FlappyBird */,
 				7366C7C31CC3369E003B728D /* Products */,
@@ -67,6 +73,7 @@
 				7366C7D91CC3396F003B728D /* GameScene.swift */,
 				7366C7CE1CC3369E003B728D /* LaunchScreen.storyboard */,
 				7366C7D11CC3369E003B728D /* Info.plist */,
+				735ECC241CC7DF5C0013F1ED /* Points.wav */,
 			);
 			path = FlappyBird;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 				7366C7D01CC3369E003B728D /* LaunchScreen.storyboard in Resources */,
 				7366C7CD1CC3369E003B728D /* Assets.xcassets in Resources */,
 				7366C7CB1CC3369E003B728D /* Main.storyboard in Resources */,
+				735ECC251CC7DF5C0013F1ED /* Points.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +301,7 @@
 				7366C7D61CC3369E003B728D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
